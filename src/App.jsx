@@ -1,18 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
-
-function App() {
-  return (
-    <>
-      <div>
-        <PokemonCard
-          name={pokemonList[0].name}
-          imgSrc={pokemonList[0].imgSrc}
-        />
-      </div>
-    </>
-  );
-}
+import React from "react";
 
 const pokemonList = [
   {
@@ -24,5 +12,16 @@ const pokemonList = [
     name: "mew",
   },
 ];
+
+function App() {
+  const thePokemon = pokemonList[0];
+  return (
+    <>
+      <div>
+        <PokemonCard pokemon={thePokemon} />
+      </div>
+    </>
+  );
+}
 
 export default App;
