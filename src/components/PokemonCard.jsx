@@ -2,10 +2,10 @@ function PokemonCard() {
   const pokemon = pokemonList[0];
   return (
     <figure>
-      {pokemon.imgSrc === undefined ? (
-        <p>????</p>
-      ) : (
+      {pokemon.imgSrc ? (
         <img src={pokemon.imgSrc} alt="bulbizare" />
+      ) : (
+        <p>????</p>
       )}
 
       <figcaption>{pokemon.name}</figcaption>
