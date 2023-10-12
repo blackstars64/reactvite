@@ -38,22 +38,22 @@ function App() {
   const precedent = () => {
     setPokemonIndex(pokemonIndex - 1);
   };
+  function incrementation(e) {
+    if (e === precedent && pokemonIndex > 0) {
+      precedent();
+    } else if (e === suivant && pokemonIndex < pokemonList.length - 1) {
+      suivant();
+    }
+  }
   const thePokemon = pokemonList[pokemonIndex];
-  const onsuivant = () => {
-    pokemonIndex > 0 ? precedent : "";
-  };
-  const onprecedent = () => {
-    pokemonIndex < pokemonList.length - 1 ? suivant : "";
-  };
   return (
     <>
-      <div>
-        <PokemonCard pokemon={thePokemon} />
-      </div>
-      <div>
-        <Boutton onclick={onsuivant} name={"suivant"} />
-        <Boutton onclick={onprecedent} name={"precedent"} />
-      </div>
+      <PokemonCard pokemon={thePokemon} />
+
+      <Boutton
+        leClickP={() => incrementation(precedent)}
+        leClickS={() => incrementation(suivant)}
+      />
     </>
   );
 }
