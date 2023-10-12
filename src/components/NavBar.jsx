@@ -1,21 +1,25 @@
-import { PropTypes } from "prop-types";
+import React from "react";
 
-function Boutton(props) {
+function NavBar({ pokemonList, pokemonIndex }) {
   return (
-    <>
-      <div>
-        <button onClick={props.leClickP}> precedent </button>
-        <button onClick={props.leClickS}> Suivant </button>
-      </div>
-    </>
+    <div>
+      {pokemonList.map((pokemon, index) => (
+        <button key={index} onClick={() => pokemonIndex(index)}>
+          {pokemon.name}
+        </button>
+      ))}
+    </div>
   );
 }
+export default NavBar;
 
-Boutton.propTypes = {
-  leClickP: PropTypes.func.isRequired,
-  leClickS: PropTypes.func.isRequired,
-};
-
-export default Boutton;
-// onClick={pokemonIndex > 0 ? Precedent : ""}
-// onClick={pokemonIndex < pokemonList.length - 1 ? suivant : ""}
+// function Boutton(props) {
+//   return (
+//     <>
+//       <div>
+//         <button onClick={props.leClickP}> precedent </button>
+//         <button onClick={props.leClickS}> Suivant </button>
+//       </div>
+//     </>
+//   );
+// }

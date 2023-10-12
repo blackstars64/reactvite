@@ -1,7 +1,7 @@
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
 import { useState } from "react";
-import Boutton from "./components/NavBar";
+import NavBar from "./components/NavBar";
 
 const pokemonList = [
   {
@@ -32,28 +32,24 @@ const pokemonList = [
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const suivant = () => {
-    setPokemonIndex(pokemonIndex + 1);
-  };
-  const precedent = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  };
-  function incrementation(e) {
-    if (e === precedent && pokemonIndex > 0) {
-      precedent();
-    } else if (e === suivant && pokemonIndex < pokemonList.length - 1) {
-      suivant();
-    }
-  }
-  const thePokemon = pokemonList[pokemonIndex];
+  // const suivant = () => {
+  //   setPokemonIndex(pokemonIndex + 1);
+  // };
+  // const precedent = () => {
+  //   setPokemonIndex(pokemonIndex - 1);
+  // };
+  // function incrementation(e) {
+  //   if (e === precedent && pokemonIndex > 0) {
+  //     precedent();
+  //   } else if (e === suivant && pokemonIndex < pokemonList.length - 1) {
+  //     suivant();
+  //   }
+  // }
+
   return (
     <>
-      <PokemonCard pokemon={thePokemon} />
-
-      <Boutton
-        leClickS={() => incrementation(suivant)}
-        leClickP={() => incrementation(precedent)}
-      />
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <NavBar pokemonList={pokemonList} pokemonIndex={setPokemonIndex} />
     </>
   );
 }
