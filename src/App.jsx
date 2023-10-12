@@ -51,8 +51,8 @@ function App() {
       <PokemonCard pokemon={thePokemon} />
 
       <Boutton
-        leClickP={() => incrementation(precedent)}
         leClickS={() => incrementation(suivant)}
+        leClickP={() => incrementation(precedent)}
       />
     </>
   );

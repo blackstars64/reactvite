@@ -4,8 +4,8 @@ function Boutton(props) {
   return (
     <>
       <div>
-        <button onClick={props.leClickS}> Suivant </button>
         <button onClick={props.leClickP}> precedent </button>
+        <button onClick={props.leClickS}> Suivant </button>
       </div>
     </>
   );
