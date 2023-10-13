@@ -2,6 +2,7 @@ import PokemonCard from "./components/PokemonCard";
 import "./App.css";
 import { useState } from "react";
 import NavBar from "./components/NavBar";
+import { useEffect } from "react";
 
 const pokemonList = [
   {
@@ -32,19 +33,9 @@ const pokemonList = [
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  // const suivant = () => {
-  //   setPokemonIndex(pokemonIndex + 1);
-  // };
-  // const precedent = () => {
-  //   setPokemonIndex(pokemonIndex - 1);
-  // };
-  // function incrementation(e) {
-  //   if (e === precedent && pokemonIndex > 0) {
-  //     precedent();
-  //   } else if (e === suivant && pokemonIndex < pokemonList.length - 1) {
-  //     suivant();
-  //   }
-  // }
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
 
   return (
     <>
